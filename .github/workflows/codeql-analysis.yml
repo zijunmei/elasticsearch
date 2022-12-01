@@ -63,9 +63,7 @@ jobs:
     - if: matrix.language == 'java'
       name: Build Java code
       id: build_java_code
-      run: |
-        ./mvnw package
-      working-directory: Source/Services/RPSLS.JavaPlayer.Api/
+      uses: github/codeql-action/autobuild@v2
 
     - name: Perform CodeQL Analysis
       id: analyze_codeql
