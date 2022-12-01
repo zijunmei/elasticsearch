@@ -58,7 +58,9 @@ jobs:
     - if: matrix.language == 'java'
       name: Build Java code
       id: build_java_code
-      uses: github/codeql-action/autobuild@v2
+      run:
+        ./gradlew.bat
+
 
     - name: Perform CodeQL Analysis
       id: analyze_codeql
