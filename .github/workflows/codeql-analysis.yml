@@ -58,7 +58,7 @@ jobs:
     - if: matrix.language == 'java'
       name: Build Java code
       id: build_java_code
-      run:
+      run: |
         ./gradlew.bat
 
 
