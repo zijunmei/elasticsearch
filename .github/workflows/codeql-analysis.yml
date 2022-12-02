@@ -14,10 +14,10 @@ name: "CodeQL"
 on:
   push:
     paths:
-      - 'main/**'
+      - 'server/**'
   pull_request:
     paths:
-      - 'main/**'
+      - 'server/**'
   schedule:
     - cron: '0 8 * * *'
   workflow_dispatch:
