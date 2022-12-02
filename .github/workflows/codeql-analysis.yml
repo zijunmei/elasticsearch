@@ -13,13 +13,9 @@ name: "CodeQL"
 
 on:
   push:
-    paths:
-      - 'server/**'
   pull_request:
-    paths:
-      - 'server/**'
   schedule:
-    - cron: '0 8 * * *'
+    - cron: '30 1 * * *'
   workflow_dispatch:
 
 jobs:
