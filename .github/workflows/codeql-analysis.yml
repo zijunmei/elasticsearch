@@ -59,7 +59,7 @@ jobs:
       name: Build Java code
       id: build_java_code
       run: |
-        ./gradle package
+        gradlew package
     
 
     - name: Perform CodeQL Analysis
