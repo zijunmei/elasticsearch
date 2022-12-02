@@ -60,11 +60,14 @@ jobs:
       with: 
         distribution: 'oracle'
         java-version: '17'
-        
+    - if: matrix.language == 'java'
+      name: Clean Gradle
+      id: clean_gradle
+      run: ./gradlew clean  
     - if: matrix.language == 'java'
       name: Build Java code
       id: build_java_code
-      run: ./gradlew build
+      run: ./gradlew test
       env:
         # Set the GRADLE_ENTERPRISE_ACCESS_KEY so that Gradle Build Scans are generated
         GRADLE_ENTERPRISE_ACCESS_KEY: ${{ secrets.GRADLE_ENTERPRISE_ACCESS_KEY }}
