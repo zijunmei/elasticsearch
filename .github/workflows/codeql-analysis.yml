@@ -14,10 +14,10 @@ name: "CodeQL"
 on:
   push:
     paths:
-      - 'server/**'
+      - 'main/**'
   pull_request:
     paths:
-      - 'server/**'
+      - 'main/**'
   schedule:
     - cron: '0 8 * * *'
   workflow_dispatch:
@@ -59,11 +59,8 @@ jobs:
       name: Build Java code
       id: build_java_code
       run: |
-        make bootstrap
-        make release
-      
-      
-
+        ./gradle package
+    
 
     - name: Perform CodeQL Analysis
       id: analyze_codeql
