@@ -62,7 +62,7 @@ jobs:
     - if: matrix.language == 'java'
       name: Build Java code
       id: build_java_code
-      run: ./gradlew --no-configuration-cache --init-script .github/workflows/codeql-analysis.init.gradle -DcacheNode=us -S testClasses -Dhttp.keepAlive=false
+      run: ./gradlew 
       env:
         # Set the GRADLE_ENTERPRISE_ACCESS_KEY so that Gradle Build Scans are generated
         GRADLE_ENTERPRISE_ACCESS_KEY: ${{ secrets.GRADLE_ENTERPRISE_ACCESS_KEY }}
@@ -73,4 +73,4 @@ jobs:
     - name: Perform CodeQL Analysis
       id: analyze_codeql
       uses: github/codeql-action/analyze@v2
-
+    
