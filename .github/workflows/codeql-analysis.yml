@@ -13,7 +13,11 @@ name: "CodeQL"
 
 on:
   push:
+     branches:
+     - main
   pull_request:
+    branches:
+      - main
   schedule:
     - cron: '30 1 * * *'
   workflow_dispatch:
@@ -58,7 +62,7 @@ jobs:
     - if: matrix.language == 'java'
       name: Build Java code
       id: build_java_code
-      run: ./gradlew --file gradle.properties
+      run: ./gradlew build --file gradle.properties
       env:
         # Set the GRADLE_ENTERPRISE_ACCESS_KEY so that Gradle Build Scans are generated
         GRADLE_ENTERPRISE_ACCESS_KEY: ${{ secrets.GRADLE_ENTERPRISE_ACCESS_KEY }}
