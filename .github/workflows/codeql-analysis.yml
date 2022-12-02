@@ -57,6 +57,7 @@ jobs:
     - name: Setup Java
       uses: actions/setup-java@v3
       with: 
+        distribution: 'oracle'
         java-version: '17'
     - if: matrix.language == 'java'
       name: Build Java code
